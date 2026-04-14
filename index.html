@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>中华经典古籍</title>
+  <meta name="description" content="十七部中华核心经典，原文、注音、注释在线阅读">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="font-medium">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h2>中华经典古籍</h2>
+    </div>
+    <nav id="sidebar-nav"></nav>
+  </aside>
+  <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+  <!-- Main -->
+  <div class="main-wrapper">
+    <div class="toolbar">
+      <button id="btn-menu" class="btn-menu" aria-label="菜单">☰</button>
+      <div id="breadcrumb"></div>
+      <div class="toolbar-controls">
+        <button id="btn-font" title="字号">字号</button>
+        <button id="btn-pinyin" title="拼音">隐拼音</button>
+        <button id="btn-theme" title="主题">☾</button>
+      </div>
+    </div>
+    <main id="main-content"></main>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/markdown-parser.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
