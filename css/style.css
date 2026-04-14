@@ -198,8 +198,9 @@ a:hover { color: var(--accent-hover); }
 #main-content {
   flex: 1;
   padding: 2rem;
-  max-width: 800px;
+  max-width: 960px;
   margin: 0 auto;
+  width: 100%;
 }
 
 /* === Home View === */
@@ -297,7 +298,7 @@ a:hover { color: var(--accent-hover); }
 
 /* === Reader View === */
 .reader-view {
-  max-width: 720px;
+  max-width: 900px;
   margin: 0 auto;
   background: var(--reader-bg);
   border: 1px solid var(--reader-border);
