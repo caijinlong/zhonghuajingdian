@@ -51,7 +51,7 @@
   // --- Fetch markdown ---
   async function fetchMarkdown(filePath) {
     if (cache.has(filePath)) return cache.get(filePath);
-    const resp = await fetch(filePath);
+    const resp = await fetch(encodeURI(filePath));
     if (!resp.ok) throw new Error(`Failed to load ${filePath}`);
     const text = await resp.text();
     cache.set(filePath, text);
