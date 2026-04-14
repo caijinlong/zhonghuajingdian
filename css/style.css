@@ -2,8 +2,8 @@
 :root {
   --bg: #faf6f0;
   --bg-secondary: #f0e8da;
-  --text: #2c1810;
-  --text-secondary: #5a4636;
+  --text: #3c2a14;
+  --text-secondary: #6b5744;
   --accent: #8b2500;
   --accent-hover: #a63000;
   --gold: #b8860b;
@@ -16,40 +16,46 @@
   --card-shadow: rgba(44, 24, 16, 0.08);
   --blockquote-bg: #f5eed8;
   --blockquote-border: #b8860b;
-  --ruby-color: #8b2500;
+  --ruby-color: #b8860b;
+  --reader-bg: #fdfbf7;
+  --reader-border: #e8ddd0;
   --toolbar-bg: rgba(250, 246, 240, 0.95);
 }
 
 .dark-theme {
-  --bg: #1a1a2e;
-  --bg-secondary: #22223a;
-  --text: #d4c5a9;
-  --text-secondary: #a09080;
+  --bg: #1a1410;
+  --bg-secondary: #231c15;
+  --text: #e8ddd0;
+  --text-secondary: #c4b5a2;
   --accent: #e07050;
   --accent-hover: #f08060;
   --gold: #d4a840;
-  --border: #3a3a50;
-  --sidebar-bg: #12121f;
-  --sidebar-text: #c0b090;
+  --border: #3d3228;
+  --sidebar-bg: #13100c;
+  --sidebar-text: #c4b5a2;
   --sidebar-hover: #2a2a40;
   --sidebar-active: #e07050;
-  --card-bg: #22223a;
+  --card-bg: #2a2118;
   --card-shadow: rgba(0, 0, 0, 0.3);
-  --blockquote-bg: #2a2a3e;
+  --blockquote-bg: #231c15;
   --blockquote-border: #d4a840;
-  --ruby-color: #e07050;
-  --toolbar-bg: rgba(26, 26, 46, 0.95);
+  --ruby-color: #e8c36a;
+  --reader-bg: #231c15;
+  --reader-border: #3d3228;
+  --toolbar-bg: rgba(26, 20, 16, 0.95);
 }
 
 /* === Reset === */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { font-size: 16px; }
+html { font-size: 18px; scroll-behavior: smooth; }
 body {
-  font-family: "Noto Serif SC", "Source Han Serif CN", "Songti SC", serif;
+  font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", "SimSun", serif;
   background: var(--bg);
   color: var(--text);
+  line-height: 1.8;
   min-height: 100vh;
   display: flex;
+  font-weight: 400;
   transition: background 0.3s, color 0.3s;
 }
 
@@ -57,10 +63,10 @@ a { color: var(--accent); text-decoration: none; }
 a:hover { color: var(--accent-hover); }
 
 /* === Font Sizes === */
-.font-small { font-size: 14px; }
-.font-medium { font-size: 17px; }
-.font-large { font-size: 20px; }
-.font-xlarge { font-size: 24px; }
+.font-small { font-size: 16px; }
+.font-medium { font-size: 18px; }
+.font-large { font-size: 22px; }
+.font-xlarge { font-size: 28px; }
 
 /* === Sidebar === */
 .sidebar {
@@ -191,8 +197,9 @@ a:hover { color: var(--accent-hover); }
 /* === Content Area === */
 #main-content {
   flex: 1;
-  padding: 30px 40px;
-  max-width: 900px;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 /* === Home View === */
@@ -290,69 +297,104 @@ a:hover { color: var(--accent-hover); }
 
 /* === Reader View === */
 .reader-view {
-  line-height: 2;
+  max-width: 720px;
+  margin: 0 auto;
+  background: var(--reader-bg);
+  border: 1px solid var(--reader-border);
+  border-radius: 8px;
+  padding: 1.5rem 1.8rem;
+  line-height: 2.8;
 }
 .reader-view h1 {
-  font-size: 1.8em;
+  font-size: 1.3rem;
   color: var(--accent);
-  margin-bottom: 16px;
-  padding-bottom: 10px;
+  text-align: center;
+  margin: 1.5rem 0 1rem;
+  padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--gold);
+  letter-spacing: 0.1em;
 }
 .reader-view h2 {
-  font-size: 1.4em;
+  font-size: 1.15rem;
   color: var(--accent);
-  margin-top: 30px;
-  margin-bottom: 12px;
-  padding-bottom: 6px;
+  margin: 1.5rem 0 0.8rem;
+  padding-bottom: 0.3rem;
   border-bottom: 1px solid var(--border);
 }
 .reader-view h3 {
-  font-size: 1.2em;
+  font-size: 1.05rem;
   color: var(--text);
-  margin-top: 24px;
-  margin-bottom: 10px;
+  margin: 1.2rem 0 0.6rem;
 }
 .reader-view p {
-  margin-bottom: 12px;
+  margin: 0.6rem 0;
+  text-indent: 2em;
 }
 .reader-view p.classic-text {
   font-size: 1.15em;
   line-height: 2.8;
-  margin: 16px 0;
+  margin: 0.8rem 0;
   text-indent: 0;
 }
 .reader-view ruby {
   ruby-position: over;
+  ruby-align: center;
+  font-size: 1.2rem;
+  margin: 0 0.12rem;
 }
 .reader-view rt {
-  font-size: 0.42em;
+  font-size: 0.55rem;
   color: var(--ruby-color);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", Roboto, sans-serif;
   font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.02em;
 }
 .reader-view blockquote {
   background: var(--blockquote-bg);
+  border: 1px solid var(--reader-border);
   border-left: 3px solid var(--blockquote-border);
-  padding: 12px 16px;
-  margin: 12px 0;
-  border-radius: 0 6px 6px 0;
-  font-size: 0.9em;
-  line-height: 1.7;
+  padding: 0.8rem 1.2rem;
+  margin: 1rem 0;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  text-indent: 0;
 }
 .reader-view blockquote p {
   margin-bottom: 4px;
+  text-indent: 0;
 }
 .reader-view hr {
   border: none;
   border-top: 1px solid var(--border);
-  margin: 30px 0;
+  margin: 1.5rem auto;
+  width: 60%;
 }
 .reader-view em {
   font-style: normal;
   color: var(--text-secondary);
   font-size: 0.85em;
 }
+
+/* Ruby global */
+ruby { ruby-align: center; }
+
+/* Font size scaling for ruby */
+.font-small .reader-view { font-size: 0.9rem; }
+.font-small .reader-view ruby { font-size: 1rem; }
+.font-small .reader-view rt { font-size: 0.48rem; }
+
+.font-medium .reader-view { font-size: 1.1rem; }
+
+.font-large .reader-view { font-size: 1.35rem; }
+.font-large .reader-view ruby { font-size: 1.5rem; }
+.font-large .reader-view rt { font-size: 0.65rem; }
+
+.font-xlarge .reader-view { font-size: 1.6rem; }
+.font-xlarge .reader-view ruby { font-size: 1.8rem; }
+.font-xlarge .reader-view rt { font-size: 0.75rem; }
 
 /* Hide pinyin */
 .hide-pinyin rt {
@@ -386,7 +428,7 @@ a:hover { color: var(--accent-hover); }
     display: block;
   }
   #main-content {
-    padding: 20px 16px;
+    padding: 1.2rem;
   }
   .category-grid {
     grid-template-columns: 1fr;
@@ -394,12 +436,18 @@ a:hover { color: var(--accent-hover); }
   .book-grid {
     grid-template-columns: 1fr;
   }
+  .reader-view {
+    padding: 1rem 1.2rem;
+  }
 }
 
 @media (max-width: 480px) {
+  html { font-size: 16px; }
   .site-title { font-size: 1.5em; }
   .toolbar { padding: 8px 12px; }
   .toolbar-controls button { padding: 4px 6px; font-size: 0.75em; }
+  .reader-view { line-height: 2.2; }
+  .reader-view rt { font-size: 0.45em; }
 }
 
 /* === Print === */
@@ -407,5 +455,10 @@ a:hover { color: var(--accent-hover); }
   .sidebar, .toolbar, .sidebar-overlay { display: none !important; }
   .main-wrapper { margin-left: 0; }
   #main-content { max-width: 100%; padding: 0; }
+  .reader-view { border: none; background: none; }
   .reader-view rt { color: #666; }
 }
+
+/* === Scrollbar === */
+.sidebar::-webkit-scrollbar { width: 4px; }
+.sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 2px; }
