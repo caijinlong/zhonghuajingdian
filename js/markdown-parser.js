@@ -2,7 +2,7 @@ window.MarkdownParser = {
   // Detect if a line is a pinyin line: starts and ends with *, content is Latin chars/tones/punctuation
   PINYIN_LINE_RE: /^\*([^*]+)\*$/,
   // Latin letters with tone marks + common punctuation in pinyin lines
-  PINYIN_CONTENT_RE: /^[a-zA-Zāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜü\s,;.:!?'"，；。！？、：\-—–…''""「」《》()（）\d]+$/,
+  PINYIN_CONTENT_RE: /^[a-zA-Zāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜü\s,;.:!?'"，；。！？、：\-—–…''\u201c\u201d「」《》()（）\d]+$/,
 
   isPinyinLine(line) {
     const m = line.match(this.PINYIN_LINE_RE);
