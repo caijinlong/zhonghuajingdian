@@ -7,7 +7,7 @@
 
   // --- Preferences ---
   const FONT_SIZES = ['font-small', 'font-medium', 'font-large', 'font-xlarge'];
-  let fontIdx = parseInt(localStorage.getItem('fontIdx') || '1', 10);
+  let fontIdx = parseInt(localStorage.getItem('fontIdx') || '2', 10);
   let pinyinVisible = localStorage.getItem('pinyin') !== 'hidden';
   let darkTheme = localStorage.getItem('theme') === 'dark';
 
